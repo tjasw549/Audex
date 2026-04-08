@@ -1,8 +1,8 @@
-import HomeHero from "../sections/HomeHero.jsx";
+import HomeHero from "../components/HomeHero.jsx";
 import Ticker from "../components/Ticker.jsx";
 import FeaturedArtists from "../components/FeaturedArtists.jsx";
 import Genres from "../components/Genres.jsx"
-import CTA from "../sections/CTA.jsx";
+import CTA from "../components/CTA.jsx";
 
 const HomeView = (props) => {
   const artists = [
