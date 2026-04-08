@@ -28,11 +28,16 @@ const HomeView = (props) => {
   ];
 
   const genres = ["Alt Pop","R&B","Pop","Hip-Hop","Indie"];
+  const tickerItems = [
+    "10,000+ Songs",
+    "Browse by Artist",
+    "Create Playlists",
+  ];
 
   return (
     <div className="bg-[#060810] text-[#ddeeff] min-h-screen overflow-hidden font-mono">
       <HomeHero />
-      <Ticker />
+      <Ticker items={tickerItems} />
       <FeaturedArtists artists={artists} />
       <Genres genres={genres} />
       <CTA />

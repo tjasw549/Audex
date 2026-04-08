@@ -14,7 +14,7 @@ const HomeHero = () => {
         <h1 className="font-['Bebas_Neue'] text-[clamp(80px,14vw,200px)] leading-[0.9]">
           Every<br />
           <span className="text-outline">Song</span><br />
-          <span className="text-cyan-400 drop-shadow-[0_0_40px_rgba(0,200,255,0.3)]">Ever.</span>
+          <span className="text-cyan-400 drop-shadow-[0_0_40px_rgba(0,200,255,0.3)]">Ever</span>
         </h1>
 
         <div className="h-px bg-white/10 my-10"></div>

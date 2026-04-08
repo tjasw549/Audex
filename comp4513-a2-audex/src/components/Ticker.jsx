@@ -5,11 +5,7 @@ const Ticker = (props) => {
   const ref = useRef(0);
   const raf = useRef(null);
 
-  const items = props.items || [
-    "10,000+ Songs",
-    "Browse by Artist",
-    "Create Playlists",
-  ];
+  const items = props.items;
 
   useEffect(() => {
     const animate = () => {
