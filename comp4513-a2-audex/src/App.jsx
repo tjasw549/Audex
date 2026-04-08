@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import HomeView from './components/HomeView'
+import HomeView from './views/HomeView'
 
 function App() {
  

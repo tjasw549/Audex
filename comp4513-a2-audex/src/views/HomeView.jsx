@@ -119,19 +119,63 @@ export default function HomeView() {
           </a>
         </div>
 
-        <div className="grid grid-cols-3 gap-1">
-          {[1,2,3].map((i) => (
-            <div key={i} className="relative overflow-hidden group bg-[#090e1a]">
-              <img
-                src={`https://picsum.photos/seed/${i}/400/500`}
-                className="w-full h-full object-cover transition duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
-              />
-              <div className="absolute bottom-0 w-full p-5 bg-gradient-to-t from-black/90 to-transparent">
-                <div className="text-cyan-400 text-xs uppercase tracking-widest">Genre</div>
-                <div className="text-2xl font-['Bebas_Neue']">Artist</div>
+        <div className="grid grid-cols-3 grid-rows-2 gap-1 h-[600px]">
+          {/* BIG FEATURE */}
+          <div className="col-span-2 row-span-2 relative overflow-hidden group bg-[#090e1a]">
+            <img 
+              src={`https://picsum.photos/seed/1/800/1000`}
+              className="w-full h-full object-cover transition duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+            />
+            <div className="absolute bottom-0 w-full p-6 bg-gradient-to-t from-black/90 to-transparent">
+              <div className="text-cyan-400 text-[12px] uppercase tracking-widest mb-1">
+                Alt Pop
+              </div>
+              <div className="text-3xl font-['Bebas_Neue'] leading-none">
+                Billie Eilish
+              </div>
+              <div className="text-white/40 text-sm mt-2">
+                124 Songs
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* SMALL TOP */}
+          <div className="relative overflow-hidden group bg-[#090e1a]">
+            <img 
+              src={`https://picsum.photos/seed/2/400/500`}
+              className="w-full h-full object-cover transition duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+            />
+            <div className="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/90 to-transparent">
+              <div className="text-cyan-400 text-[11px] uppercase tracking-widest mb-1">
+                Hip-Hop
+              </div>
+              <div className="text-xl font-['Bebas_Neue'] leading-none">
+                Kendrick Lamar
+              </div>
+              <div className="text-white/40 text-xs mt-1">
+                98 Songs
+              </div>
+            </div>
+          </div>
+
+          {/* SMALL BOTTOM */}
+          <div className="relative overflow-hidden group bg-[#090e1a]">
+            <img
+              src={`https://picsum.photos/seed/3/400/500`}
+              className="w-full h-full object-cover transition duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+            />
+            <div className="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/90 to-transparent">
+              <div className="text-cyan-400 text-[11px] uppercase tracking-widest mb-1">
+                Indie Rock
+              </div>
+              <div className="text-xl font-['Bebas_Neue'] leading-none">
+                Mitski
+              </div>
+              <div className="text-white/40 text-xs mt-1">
+                87 Songs
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
