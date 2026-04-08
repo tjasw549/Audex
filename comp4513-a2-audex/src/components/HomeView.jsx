@@ -20,7 +20,7 @@ export default function HomeView() {
     <div className="bg-[#060810] text-[#ddeeff] min-h-screen overflow-hidden font-mono">
 
       {/* HERO */}
-      <section className="relative flex items-center pt-20 pb-32 overflow-hidden">
+      <section className="relative flex items-center pt-20 pb-14 overflow-hidden">
 
         {/* Vinyl */}
         <div className="vinyl-bg">
@@ -103,10 +103,10 @@ export default function HomeView() {
       </div>
 
       {/* FEATURED */}
-      <section className="max-w-[1200px] mx-auto px-12 py-24">
+      <section className="max-w-[1200px] mx-auto px-12 py-14">
         <div className="flex justify-between items-end mb-12">
           <div>
-            <div className="text-[11px] tracking-[0.2em] uppercase text-cyan-400 mb-3">
+            <div className="text-[14px] tracking-[0.2em] uppercase text-cyan-400 mb-3">
               Featured
             </div>
             <h2 className="font-['Bebas_Neue'] text-6xl leading-none">
@@ -138,23 +138,22 @@ export default function HomeView() {
       {/* GENRES */}
       <section className="bg-[#090e1a] py-20">
         <div className="max-w-[1200px] mx-auto px-12">
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex justify-between items-end mb-10">
             <div>
-              <div className="text-[11px] tracking-[0.2em] uppercase text-cyan-400 mb-3">
-                Browse by
+              <div className="text-[14px] tracking-[0.18em] uppercase text-cyan-400 mb-3">
+                Browse By
               </div>
               <h2 className="font-['Bebas_Neue'] text-6xl leading-none">
-                Genre
+                Genres
               </h2>
             </div>
           </div>
 
           <div className="flex flex-wrap gap-2">
-            {["Pop","Hip-Hop","Indie"].map((g) => (
+            {["Alt Pop","R&B","Pop","Hip-Hop","Indie"].map((g) => (
               <button
                 key={g}
-                className="border border-white/20 px-4 py-1 text-xs uppercase tracking-widest hover:bg-cyan-400 hover:text-black transition"
-              >
+                className="border border-white/20 px-5 py-2 text-[11px] uppercase tracking-widest hover:bg-cyan-400 hover:text-black transition hover:-translate-y-0.5"              >
                 {g}
               </button>
             ))}
@@ -164,7 +163,11 @@ export default function HomeView() {
 
       {/* CTA */}
       <section className="text-center py-32">
-        <h2 className="font-['Bebas_Neue'] text-[clamp(60px,10vw,140px)] mb-10">
+        <div className="text-[16px] tracking-[0.18em] uppercase text-cyan-400 mb-10">
+          Ready?
+        </div>
+
+        <h2 className="font-['Bebas_Neue'] text-[clamp(60px,10vw,140px)] mb-10 leading-[0.9]">
           Start<br />
           <span className="text-outline">Exploring</span>
         </h2>
