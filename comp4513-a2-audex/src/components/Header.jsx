@@ -6,7 +6,7 @@ import HeaderRight from '../components/HeaderRight.jsx';
 const Header = (props) => {
   return (
     <div>
-      <header className="fixed top-0 left-0 right-0 z-50 h-[68px] flex items-center justify-between px-12 bg-[#060810]/70 backdrop-blur-md border-b border-[#00c8ff]/10">
+      <header className="fixed top-0 left-0 right-0 z-50 h-[68px] flex items-center justify-between px-12 bg-[#0a0f1a]/70 backdrop-blur-md border-b border-[#00c8ff]/10">
         <Logo />
         <NavLinks isLoggedIn={props.isLoggedIn} />
         <HeaderRight 

@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import HomeView from './views/HomeView'
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 const App = () => {
 
@@ -25,6 +26,8 @@ const App = () => {
         {/* fallback */}
         <Route path="*" element={<HomeView />} />
       </Routes>
+
+      <Footer />
     </main>
   );
 }
