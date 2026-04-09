@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 const App = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [playlistName, setPlaylistName] = useState("Playlist");
   const [playlistCount, setPlaylistCount] = useState(124);
  
   return (
@@ -15,6 +16,7 @@ const App = () => {
       
       <Header
           isLoggedIn={isLoggedIn}
+          playlistName={playlistName}
           playlistCount={playlistCount}
           onLogin={() => setIsLoggedIn(true)}
           onLogout={() => setIsLoggedIn(false)}

@@ -13,7 +13,7 @@ const Logo = () => {
                 alt="Audex Logo"
                 className="w-20 h-15 rounded-full object-cover"
             />
-            <span className="font-['Bebas_Neue'] text-[22px] tracking-wider text-[#ddeeff] transition-colors duration-200 hover:text-white"> 
+            <span className="font-['Bebas_Neue'] text-[42px] tracking-wider text-[#ddeeff] transition-colors duration-200 hover:text-white"> 
                 Aud<span className="text-[#00c8ff]">ex</span>
             </span>
         </button>

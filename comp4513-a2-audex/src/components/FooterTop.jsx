@@ -6,7 +6,7 @@ const FooterTop = () => {
       
       {/* Brand */}
       <div className="flex flex-col gap-3">
-        <div className="font-['Bebas_Neue'] text-[26px] sm:text-[28px] tracking-wider text-[#ddeeff] leading-none">
+        <div className="font-['Bebas_Neue'] text-[32px] sm:text-[28px] tracking-wider text-[#ddeeff] leading-none">
           Aud<span className="text-[#00c8ff]">ex</span>
         </div>
 
