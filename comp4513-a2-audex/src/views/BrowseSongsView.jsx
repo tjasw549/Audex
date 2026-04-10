@@ -2,9 +2,13 @@ import HomeHero from "../components/HomeHero.jsx";
 import Ticker from "../components/Ticker.jsx";
 import FeaturedArtists from "../components/FeaturedArtists.jsx";
 import CTA from "../components/CTA.jsx";
+import { useEffect } from "react";
 
+const BrowseSongsView = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-const HomeView = (props) => {
   const artists = [
     {
       size: "large",
@@ -27,21 +31,12 @@ const HomeView = (props) => {
     },
   ];
 
-  const genres = ["Alt Pop","R&B","Pop","Hip-Hop","Indie"];
-  const tickerItems = [
-    "10,000+ Songs",
-    "Browse by Artist",
-    "Create Playlists",
-  ];
+  const genres = ["Alt Pop", "R&B", "Pop", "Hip-Hop", "Indie"];
+  const tickerItems = ["10,000+ Songs", "Browse by Artist", "Create Playlists"];
 
   return (
-    <div className="bg-[#060810] text-[#ddeeff] min-h-screen overflow-hidden font-mono">
-      <HomeHero />
-      <Ticker items={tickerItems} />
-      <FeaturedArtists artists={artists} />
-      <CTA />
-    </div>
+    <div className="bg-[#060810] text-[#ddeeff] min-h-screen overflow-hidden font-mono"></div>
   );
 };
 
-export default HomeView;
+export default BrowseSongsView;
