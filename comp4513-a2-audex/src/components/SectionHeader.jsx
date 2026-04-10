@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const SectionHeader = (props) => {
   return (
     <div className="flex justify-between items-end mb-10">
@@ -12,9 +14,9 @@ const SectionHeader = (props) => {
       </div>
 
       {props.action && (
-        <a href="#" className="text-[11px] tracking-widest uppercase text-white/30 border-b border-white/20 pb-1 hover:text-white transition">
+        <Link to={props.to} className="text-[11px] tracking-widest uppercase text-white/30 border-b border-white/20 pb-1 hover:text-white transition">
           {props.action} →
-        </a>
+        </Link>
       )}
     </div>
   );

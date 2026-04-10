@@ -4,7 +4,7 @@ import ArtistCard from "../components/ArtistCard";
 const FeaturedArtists = (props) => {
   return (
     <section className="max-w-[1200px] mx-auto px-12 py-14">
-      <SectionHeader label="Featured" title="Artists" action="View All" />
+      <SectionHeader label="Featured" title="Artists" action="View All" to="/artists" />
 
       <div className="grid grid-cols-3 grid-rows-2 gap-1 h-[600px]">
         {props.artists.map((artist, index) => (

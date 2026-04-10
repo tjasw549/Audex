@@ -1,6 +1,10 @@
 import VinylBackground from "../components/VinylBackground.jsx";
+import { useNavigate } from 'react-router-dom';
+
 
 const HomeHero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative flex items-center pt-20 pb-14 overflow-hidden">
       <VinylBackground />
@@ -26,10 +30,10 @@ const HomeHero = () => {
             </p>
 
             <div className="flex gap-3">
-              <button className="bg-cyan-400 text-black px-9 py-3 uppercase tracking-wider text-sm font-medium hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#1a4a6a] transition">
+              <button className="bg-cyan-400 text-black px-9 py-3 uppercase tracking-wider text-sm font-medium hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#1a4a6a] transition" onClick={() => navigate('/songs')}>
                 Explore Songs
               </button>
-              <button className="border border-white/25 px-9 py-3 uppercase tracking-wider text-sm hover:bg-white/5 transition">
+              <button className="border border-white/25 px-9 py-3 uppercase tracking-wider text-sm hover:bg-white/5 transition" onClick={() => navigate('/artists')}>
                 View Artists
               </button>
             </div>

@@ -1,4 +1,9 @@
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 const CTA = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="text-center py-32">
       <div className="text-[16px] tracking-[0.18em] uppercase text-cyan-400 mb-10">
@@ -10,8 +15,8 @@ const CTA = () => {
         <span className="text-outline">Exploring</span>
       </h2>
 
-      <button className="bg-cyan-400 text-black px-14 py-4 uppercase tracking-wider text-sm hover:-translate-x-1 hover:-translate-y-1 transition">
-        Browse All Songs
+      <button className="inline-black bg-cyan-400 text-black px-14 py-4 uppercase tracking-wider text-sm hover:-translate-x-1 hover:-translate-y-1 transition" onClick={() => navigate('/songs')}>
+        Browse All Songs 
       </button>
     </section>
   );
