@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import HomeView from "./views/HomeView";
 import ArtistsView from "./views/ArtistsView";
 import BrowseSongsView from "./views/BrowseSongsView";
+import GenresView from "./views/GenresView";
 
 
 import Header from "./components/Header";
@@ -27,6 +28,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/artists" element={<ArtistsView />} />
+        <Route path="/genres" element={<GenresView />} />
+
         <Route path="/songs" element={<BrowseSongsView />} />
         {/* fallback */}
         <Route path="*" element={<HomeView />} />

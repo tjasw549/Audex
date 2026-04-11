@@ -8,7 +8,7 @@ const FeaturedArtists = (props) => {
 
       <div className="grid grid-cols-3 grid-rows-2 gap-1 h-[600px]">
         {props.artists.map((artist, index) => (
-          <ArtistCard key={index} {...artist} />
+          <ArtistCard key={index} {...artist}  />
         ))}
       </div>
     </section>
