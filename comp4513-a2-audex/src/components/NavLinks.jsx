@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 const NAV_LINKS = [
   { label: "Home",      to: "/" },
   { label: "Artists",   to: "/artists" },
+  { label: "Genres",     to: "/genres" },
   { label: "Songs",     to: "/songs" },
   { label: "Playlists", to: "/playlists", requiresAuth: true },
   { label: "About",     to: "/about" },

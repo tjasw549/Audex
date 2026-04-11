@@ -1,41 +1,34 @@
-import HomeHero from "../components/HomeHero.jsx";
-import Ticker from "../components/Ticker.jsx";
-import FeaturedArtists from "../components/FeaturedArtists.jsx";
-import CTA from "../components/CTA.jsx";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import ArtistsHero from "../components/ArtistsHero";
+import ArtistGrid from "../components/ArtistGrid";
 
-const ArtistsView = (props) => {
+const ArtistsView = () => {
+  const [artists, setArtists] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    fetch("https://comp4513-spotify-api.vercel.app/api/artists")
+      .then((res) => res.json())
+      .then((data) => {
+        setArtists(data);
+        setLoading(false);
+      });
   }, []);
 
-  const artists = [
-    {
-      size: "large",
-      image: "https://picsum.photos/seed/1/800/1000",
-      genre: "Alt Pop",
-      name: "Billie Eilish",
-      songs: 124,
-    },
-    {
-      image: "https://picsum.photos/seed/2/400/500",
-      genre: "Hip-Hop",
-      name: "Kendrick Lamar",
-      songs: 98,
-    },
-    {
-      image: "https://picsum.photos/seed/3/400/500",
-      genre: "Indie Rock",
-      name: "Mitski",
-      songs: 87,
-    },
-  ];
-
-  const genres = ["Alt Pop", "R&B", "Pop", "Hip-Hop", "Indie"];
-  const tickerItems = ["10,000+ Songs", "Browse by Artist", "Create Playlists"];
+  if (loading) return (
+    <div className="bg-[#060810] text-cyan-400 min-h-screen flex items-center justify-center font-mono tracking-widest uppercase text-sm">
+      Loading Artists...
+    </div>
+  );
 
   return (
-    <div className="bg-[#060810] text-[#ddeeff] min-h-screen overflow-hidden font-mono"></div>
+    <div className="bg-[#060810] text-[#ddeeff] min-h-screen font-mono">
+      <ArtistsHero />
+      <div className="border-t border-white/10 mx-12" />
+      <ArtistGrid artists={artists} />
+    </div>
   );
 };
 
