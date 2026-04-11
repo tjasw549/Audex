@@ -17,11 +17,15 @@ const ArtistsView = () => {
       });
   }, []);
 
-  if (loading) return (
-    <div className="bg-[#060810] text-cyan-400 min-h-screen flex items-center justify-center font-mono tracking-widest uppercase text-sm">
-      Loading Artists...
-    </div>
-  );
+   if (loading) {
+        return (
+            <div className="flex items-center justify-center h-screen bg-[#060810]">
+                <span className="font-['Bebas_Neue'] text-4xl tracking-[8px] text-[#00e5ff]/40 animate-pulse">
+                    LOADING...
+                </span>
+            </div>
+        );
+    }
 
   return (
     <div className="bg-[#060810] text-[#ddeeff] min-h-screen font-mono">
