@@ -69,6 +69,11 @@
     background: rgba(0, 229, 255, 0.5);
 }
 
+/* Custom select dropdown */
+select option {
+    background-color: #0a1628;
+    color: #ddeeff;
+}
 
 @keyframes spinSlow {
   from { transform: translateY(-50%) rotate(0deg); }
