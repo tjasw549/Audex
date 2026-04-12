@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 
 import HomeView from "./views/HomeView";
 import ArtistsView from "./views/ArtistsView";
-import BrowseSongsView from "./views/BrowseSongsView";
 import GenresView from "./views/GenresView";
 import SingleGenreView from "./views/SingleGenreView";
 import SingleArtistView from "./views/SingleArtistView";
@@ -37,9 +36,6 @@ const App = () => {
         <Route path="/genres" element={<GenresView />} />
         <Route path="/single-genre/:genre_id" element={<SingleGenreView />} />
         <Route path="/songs" element={<SongsView />} />
-
-
-        <Route path="/songs" element={<BrowseSongsView />} />
         {/* fallback */}
         <Route path="*" element={<HomeView />} />
       </Routes>
