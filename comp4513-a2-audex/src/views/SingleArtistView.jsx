@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {
   Radar,
   RadarChart,
@@ -14,6 +14,8 @@ const SingleArtistView = () => {
   const [loading, setLoading] = useState(true);
   const { artist_id } = useParams();
   const [songs, setSongs] = useState([]);
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -139,7 +141,7 @@ const SingleArtistView = () => {
             </div>
 
             {/* RIGHT - Songs */}
-            <div className="flex-1 overflow-y-auto max-h-[400px]">
+            <div className="flex-1">
               <table className="w-full border-collapse">
                 <thead className="sticky top-0 bg-[#060810]">
                   <tr>
@@ -157,18 +159,22 @@ const SingleArtistView = () => {
                   {songs.map((song, i) => (
                     <tr
                       key={song.song_id}
-                      className="group hover:bg-[#00e5ff]/[0.04] transition-colors"
+                      onClick={() => navigate(`/single-song/${song.song_id}`)}
+                      className="group hover:bg-[#00e5ff]/[0.04] transition-colors cursor-pointer"
                     >
                       <td className="py-3 px-4 text-[11px] text-[#ddeeff]/20">
                         {String(i + 1).padStart(2, "0")}
                       </td>
-                      <td className="py-3 px-4 text-sm text-[#ddeeff] hover:text-[#00e5ff] transition-colors cursor-pointer">
+                      <td className="py-3 px-4 text-sm text-[#ddeeff]">
                         {song.title}
                       </td>
                       <td className="py-3 px-4 text-sm text-[#ddeeff]/35">
                         {song.year}
                       </td>
-                      <td className="py-3 px-4">
+                      <td
+                        className="py-3 px-4"
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         <button
                           onClick={() => console.log("Add to playlist:", song)}
                           className="w-7 h-7 border border-[#00e5ff]/25 text-[#00e5ff] text-base hover:bg-[#00e5ff]/10 hover:border-[#00e5ff] transition-all flex items-center justify-center"
