@@ -84,13 +84,7 @@ const SongsView = () => {
                 artists={artists}
                 genres={genres}
             />
-            <SongsMain
-                filtered={filtered}
-                activeFilters={activeFilters}
-                clearAll={clearAll}
-                sortBy={sortBy}
-                setSortBy={setSortBy}
-            />
+            
         </div>
     );
 };

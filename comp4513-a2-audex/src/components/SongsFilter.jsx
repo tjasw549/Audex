@@ -24,7 +24,7 @@ const SongsFilter = ({
             {/* Years */}
             <div className="mb-6">
                 <p className="text-[10px] tracking-[3px] text-[#ddeeff]/30 uppercase mb-3">Year</p>
-                <div className="space-y-1 max-h-36 overflow-y-auto pr-1">
+                <div className="space-y-1 max-h-36 overflow-y-auto pr-1 filter-scroll">
                     {years.map((year) => (
                         <label key={year} className="flex items-center gap-2 cursor-pointer group">
                             <input
@@ -44,7 +44,7 @@ const SongsFilter = ({
             {/* Artists */}
             <div className="mb-6">
                 <p className="text-[10px] tracking-[3px] text-[#ddeeff]/30 uppercase mb-3">Artist</p>
-                <div className="space-y-1 max-h-48 overflow-y-auto pr-1">
+                <div className="space-y-1 max-h-48 overflow-y-auto pr-1 filter-scroll">
                     {artists.map((artist) => (
                         <label key={artist.artist_id} className="flex items-center gap-2 cursor-pointer group">
                             <input
@@ -64,7 +64,7 @@ const SongsFilter = ({
             {/* Genres */}
             <div className="mb-6">
                 <p className="text-[10px] tracking-[3px] text-[#ddeeff]/30 uppercase mb-3">Genre</p>
-                <div className="space-y-1 max-h-48 overflow-y-auto pr-1">
+                <div className="space-y-1 max-h-48 overflow-y-auto pr-1 filter-scroll">
                     {genres.map((genre) => (
                         <label key={genre.genre_id} className="flex items-center gap-2 cursor-pointer group">
                             <input
