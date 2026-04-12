@@ -8,6 +8,7 @@ import GenresView from "./views/GenresView";
 import SingleGenreView from "./views/SingleGenreView";
 import SingleArtistView from "./views/SingleArtistView";
 import SingleSongView from "./views/SingleSongView";
+import SongsView from "./views/SongsView";
 
 
 import Header from "./components/Header";
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/single-song/:song_id" element={<SingleSongView />} />
         <Route path="/genres" element={<GenresView />} />
         <Route path="/single-genre/:genre_id" element={<SingleGenreView />} />
+        <Route path="/songs" element={<SongsView />} />
 
 
         <Route path="/songs" element={<BrowseSongsView />} />
