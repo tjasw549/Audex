@@ -61,7 +61,7 @@ const SingleSongView = () => {
   ];
 
   return (
-    <div className="bg-[#060810] text-[#ddeeff] min-h-screen font-['mono']">
+    <div className="bg-[#060810] text-[#ddeeff] min-h-screen ">
       {/* HERO */}
       <div className="relative h-[300px]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628] via-[#060810] to-[#0d1f1f]" />

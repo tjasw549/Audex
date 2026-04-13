@@ -35,7 +35,7 @@ const HomeView = () => {
   const tickerItems = ["10,000+ Songs", "Browse by Artist", "Create Playlists"];
 
   return (
-    <div className="bg-[#060810] text-[#ddeeff] min-h-screen overflow-hidden font-['mono']">
+    <div className="bg-[#060810] text-[#ddeeff] min-h-screen overflow-hidden ">
       <HomeHero />
       <Ticker items={tickerItems} />
       <FeaturedArtists artists={artists} />

@@ -84,7 +84,7 @@ const SongsView = () => {
     }
 
     return (
-        <div className="bg-[#060810] text-[#ddeeff] min-h-screen font-['mono'] flex">
+        <div className="bg-[#060810] text-[#ddeeff] min-h-screen  flex">
             <SongsFilter
                 titleFilter={titleFilter}
                 setTitleFilter={setTitleFilter}

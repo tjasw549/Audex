@@ -58,7 +58,7 @@ const SingleArtistView = () => {
   }
 
   return (
-    <div className="bg-[#060810] text-[#ddeeff] w-full min-h-screen font-['mono']">
+    <div className="bg-[#060810] text-[#ddeeff] w-full min-h-screen ">
       {/* HERO */}
       <div className="relative h-[480px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628] via-[#060810] to-[#0d1f1f]" />
