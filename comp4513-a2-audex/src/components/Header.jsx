@@ -14,7 +14,6 @@ const Header = (props) => {
           isLoggedIn={props.isLoggedIn}
           playlistName={props.playlistName}
           playlistCount={props.playlistCount}
-          onLogin={props.onLogin}
           onLogout={props.onLogout}
           menuOpen={menuOpen}
           onMenuToggle={() => setMenuOpen(prev => !prev)}

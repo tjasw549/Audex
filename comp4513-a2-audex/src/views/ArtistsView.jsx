@@ -28,10 +28,10 @@ const ArtistsView = () => {
     }
 
   return (
-    <div className="bg-[#060810] text-[#ddeeff] min-h-screen font-mono">
+    <div className="bg-[#060810] text-[#ddeeff] min-h-screen font-['mono']">
       <ArtistsHero />
       <div className="border-t border-white/10 mx-12" />
-      <ArtistGrid artists={artists} />
+        <ArtistGrid artists={artists} />
     </div>
   );
 };

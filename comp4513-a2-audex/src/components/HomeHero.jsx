@@ -1,7 +1,6 @@
 import VinylBackground from "../components/VinylBackground.jsx";
 import { useNavigate } from 'react-router-dom';
 
-
 const HomeHero = () => {
   const navigate = useNavigate();
 
@@ -25,7 +24,7 @@ const HomeHero = () => {
 
         <div className="flex flex-wrap justify-between items-end gap-8">
           <div className="max-w-[400px]">
-            <p className="font-serif italic text-[20px] text-white/50 mb-8 leading-relaxed">
+            <p className="font-['serif'] italic text-[20px] text-white/50 mb-8 leading-relaxed">
               Browse thousands of tracks. Filter by artist, genre, year. Build playlists that last.            
             </p>
 

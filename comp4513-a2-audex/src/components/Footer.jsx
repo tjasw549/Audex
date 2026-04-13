@@ -15,7 +15,7 @@ const Footer = ({ githubUrl = "https://github.com/tjasw549/Audex" }) => {
 
   return (
     <div>
-      <footer className="border-t border-[#00c8ff]/10 bg-[#0a0f1a] px-6 sm:px-10 lg:px-12 pt-10 sm:pt-12 pb-8 font-mono">
+      <footer className="border-t border-[#00c8ff]/10 bg-[#0a0f1a] px-6 sm:px-10 lg:px-12 pt-10 sm:pt-12 pb-8 font-['mono']">
         <div className="max-w-[1200px] mx-auto">  
           <FooterTop />
           <FooterBottom githubUrl={githubUrl} />

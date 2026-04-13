@@ -31,7 +31,7 @@ const GenresView = () => {
     }
 
     return (
-        <div className="bg-[#060810] text-[#ddeeff] min-h-screen font-mono">
+        <div className="bg-[#060810] text-[#ddeeff] min-h-screen font-['mono']">
 
             {/* HERO */}
             <div className="relative h-[240px] overflow-hidden">
