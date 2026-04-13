@@ -8,7 +8,7 @@ import SingleGenreView from "./views/SingleGenreView";
 import SingleArtistView from "./views/SingleArtistView";
 import SingleSongView from "./views/SingleSongView";
 import SongsView from "./views/SongsView";
-
+import LoginView from "./views/LoginView";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -24,7 +24,6 @@ const App = () => {
         isLoggedIn={isLoggedIn}
         playlistName={playlistName}
         playlistCount={playlistCount}
-        onLogin={() => setIsLoggedIn(true)}
         onLogout={() => setIsLoggedIn(false)}
       />
 
@@ -36,6 +35,7 @@ const App = () => {
         <Route path="/genres" element={<GenresView />} />
         <Route path="/single-genre/:genre_id" element={<SingleGenreView />} />
         <Route path="/songs" element={<SongsView />} />
+        <Route path="/login" element={<LoginView onLogin={() => setIsLoggedIn(true)} />} />
         {/* fallback */}
         <Route path="*" element={<HomeView />} />
       </Routes>
