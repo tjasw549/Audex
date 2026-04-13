@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 const ArtistsHero = () => {
+
   return (
     <section className="relative h-[40vh] min-h-[280px] flex items-end px-12 pb-12 overflow-hidden">
       {/* background grid lines */}
@@ -29,7 +32,7 @@ const ArtistsHero = () => {
           </span>
         </h1>
         <p className="text-white/30 text-sm mt-4 tracking-widest">
-          Browse by genre, name, or era
+          Browse by artist name
         </p>
       </div>
     </section>

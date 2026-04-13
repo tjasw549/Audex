@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import SongTable from "../components/SongTable";
+
 import {
   Radar,
   RadarChart,

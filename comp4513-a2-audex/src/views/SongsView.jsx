@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import SongsFilter from "../components/SongsFilter";
 import SongsMain from "../components/SongsMain";
 
@@ -11,8 +12,21 @@ const SongsView = () => {
     const [selectedArtists, setSelectedArtists] = useState([]);
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [sortBy, setSortBy] = useState("title");
+    const { artist_id } = useParams();
+    const { genre_id } = useParams();
+
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+
+        if (artist_id) {
+            setSelectedArtists([Number(artist_id)]);
+        }
+
+        if (genre_id) {
+            setSelectedGenres([Number(genre_id)]);
+        }
+
         fetch("https://comp4513-spotify-api.vercel.app/api/songs")
             .then((res) => res.json())
             .then((data) => {

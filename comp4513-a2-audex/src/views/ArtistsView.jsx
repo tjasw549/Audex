@@ -5,9 +5,11 @@ import ArtistGrid from "../components/ArtistGrid";
 const ArtistsView = () => {
   const [artists, setArtists] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
 
     fetch("https://comp4513-spotify-api.vercel.app/api/artists")
       .then((res) => res.json())
@@ -17,21 +19,21 @@ const ArtistsView = () => {
       });
   }, []);
 
-   if (loading) {
-        return (
-            <div className="flex items-center justify-center h-screen bg-[#060810]">
-                <span className="font-['Bebas_Neue'] text-4xl tracking-[8px] text-[#00e5ff]/40 animate-pulse">
-                    LOADING...
-                </span>
-            </div>
-        );
-    }
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-[#060810]">
+        <span className="font-['Bebas_Neue'] text-4xl tracking-[8px] text-[#00e5ff]/40 animate-pulse">
+          LOADING...
+        </span>
+      </div>
+    );
+  }
 
   return (
-    <div className="bg-[#060810] text-[#ddeeff] min-h-screen font-['mono']">
+    <div className="bg-[#060810] text-[#ddeeff] min-h-screen ">
       <ArtistsHero />
       <div className="border-t border-white/10 mx-12" />
-        <ArtistGrid artists={artists} />
+      <ArtistGrid artists={artists} />
     </div>
   );
 };

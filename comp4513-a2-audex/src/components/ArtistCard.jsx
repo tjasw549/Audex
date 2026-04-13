@@ -5,7 +5,7 @@ const ArtistCard = (props) => {
   if (!props || !props.artist_name) return null;
 
   return (
-    <Link to={`/single-artist/${props.artist_id}`} className="block">
+    <Link to={`/songs/${props.artist_id}`} className="block">
       <div
         className={`relative overflow-hidden group bg-[#090e1a] ${isLarge ? "col-span-2 row-span-2 h-[500px]" : "h-[200px]"
           }`}

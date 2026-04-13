@@ -36,6 +36,9 @@ const App = () => {
         <Route path="/single-genre/:genre_id" element={<SingleGenreView />} />
         <Route path="/songs" element={<SongsView />} />
         <Route path="/login" element={<LoginView onLogin={() => setIsLoggedIn(true)} />} />
+        <Route path="/songs/:artist_id" element={<SongsView />} />
+        <Route path="/songs/:genre_id" element={<SongsView />} />
+        <Route path="/songs/genre/:genre_id" element={<SongsView />} />
         {/* fallback */}
         <Route path="*" element={<HomeView />} />
       </Routes>
