@@ -1,6 +1,6 @@
 import FooterNav from "./FooterNav";
 
-const FooterTop = () => {
+const FooterTop = ({ onAbout }) => {
   return (
     <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-10 pb-8 border-b border-[#ddeeff]/10">
       
@@ -15,7 +15,7 @@ const FooterTop = () => {
         </p>
       </div>
 
-      <FooterNav />
+      <FooterNav onAbout={onAbout} />
     </div>
   );
 }

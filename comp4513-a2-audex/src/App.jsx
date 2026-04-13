@@ -48,7 +48,7 @@ const App = () => {
         <Route path="*" element={<HomeView />} />
       </Routes>
 
-      <Footer />
+      <Footer onAbout={() => setAboutOpen(true)} />
     </main>
   );
 };

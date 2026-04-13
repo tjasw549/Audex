@@ -61,8 +61,8 @@ const NavLinks = ({ isLoggedIn, mobile = false, onLinkClick, onAbout }) => {
       ))}
       <li>
         <button
-          onClick={onAbout}
           className="text-[11px] uppercase tracking-widest px-4 py-2 rounded transition text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5 bg-transparent border-0 cursor-pointer"
+          onClick={onAbout}
         >
           About
         </button>
