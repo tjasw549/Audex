@@ -31,7 +31,6 @@ const SongsView = () => {
             .then((res) => res.json())
             .then((data) => {
                 setSongs(data);
-                setFiltered(data);
                 setLoading(false);
             });
     }, []);
