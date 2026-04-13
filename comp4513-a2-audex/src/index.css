@@ -75,6 +75,16 @@ select option {
     color: #ddeeff;
 }
 
+dialog {
+  background-color: rgba(0, 229, 255,);
+  
+
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
 @keyframes spinSlow {
   from { transform: translateY(-50%) rotate(0deg); }
   to { transform: translateY(-50%) rotate(360deg); }
