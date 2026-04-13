@@ -1,15 +1,14 @@
 import { NavLink } from 'react-router-dom';
 
 const NAV_LINKS = [
-  { label: "Home",      to: "/" },
-  { label: "Artists",   to: "/artists" },
-  { label: "Genres",     to: "/genres" },
-  { label: "Songs",     to: "/songs" },
+  { label: "Home", to: "/" },
+  { label: "Artists", to: "/artists" },
+  { label: "Genres", to: "/genres" },
+  { label: "Songs", to: "/songs" },
   { label: "Playlists", to: "/playlists", requiresAuth: true },
-  { label: "About",     to: "/about" },
 ];
 
-const NavLinks = ({ isLoggedIn, mobile = false, onLinkClick }) => {
+const NavLinks = ({ isLoggedIn, mobile = false, onLinkClick, onAbout }) => {
   const filtered = NAV_LINKS.filter(link => !link.requiresAuth || isLoggedIn);
 
   if (mobile) {
@@ -21,7 +20,7 @@ const NavLinks = ({ isLoggedIn, mobile = false, onLinkClick }) => {
               to={link.to}
               onClick={onLinkClick}
               className={({ isActive }) =>
-                `block text-[11px]  uppercase tracking-widest px-6 py-3 transition ${
+                `block text-[11px] uppercase tracking-widest px-6 py-3 transition ${
                   isActive ? 'text-[#00c8ff]' : 'text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5'
                 }`
               }
@@ -30,6 +29,14 @@ const NavLinks = ({ isLoggedIn, mobile = false, onLinkClick }) => {
             </NavLink>
           </li>
         ))}
+        <li>
+          <button
+            onClick={() => { onAbout?.(); onLinkClick?.(); }}
+            className="block w-full text-left text-[11px] uppercase tracking-widest px-6 py-3 transition text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5 bg-transparent border-0 cursor-pointer"
+          >
+            About
+          </button>
+        </li>
       </ul>
     );
   }
@@ -41,7 +48,7 @@ const NavLinks = ({ isLoggedIn, mobile = false, onLinkClick }) => {
           <NavLink
             to={link.to}
             className={({ isActive }) =>
-              `text-[11px]  uppercase tracking-widest px-4 py-2 rounded transition ${
+              `text-[11px] uppercase tracking-widest px-4 py-2 rounded transition ${
                 isActive
                   ? 'text-[#00c8ff] border-b border-[#00c8ff]'
                   : 'text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5'
@@ -52,6 +59,14 @@ const NavLinks = ({ isLoggedIn, mobile = false, onLinkClick }) => {
           </NavLink>
         </li>
       ))}
+      <li>
+        <button
+          onClick={onAbout}
+          className="text-[11px] uppercase tracking-widest px-4 py-2 rounded transition text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5 bg-transparent border-0 cursor-pointer"
+        >
+          About
+        </button>
+      </li>
     </ul>
   );
 };

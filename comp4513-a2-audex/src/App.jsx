@@ -9,6 +9,7 @@ import SingleArtistView from "./views/SingleArtistView";
 import SingleSongView from "./views/SingleSongView";
 import SongsView from "./views/SongsView";
 import LoginView from "./views/LoginView";
+import AboutView from "./views/AboutView";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -17,6 +18,7 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [playlistName, setPlaylistName] = useState("Playlist");
   const [playlistCount, setPlaylistCount] = useState(124);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   return (
     <main className="bg-[#060810] min-h-screen text-[#ddeeff]">
@@ -25,7 +27,10 @@ const App = () => {
         playlistName={playlistName}
         playlistCount={playlistCount}
         onLogout={() => setIsLoggedIn(false)}
+        onAbout={() => setAboutOpen(true)}
       />
+
+      <AboutView isOpen={aboutOpen} onClose={() => setAboutOpen(false)} />
 
       <Routes>
         <Route path="/" element={<HomeView />} />

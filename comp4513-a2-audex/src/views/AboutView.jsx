@@ -1,0 +1,189 @@
+import { useEffect, useRef } from "react";
+ 
+const PROJECT = {
+  name:       "Audex",
+  course:     "COMP 4513 - Assignment 2",
+  semester:   "Winter 2026",
+  githubRepo: "https://github.com/tjasw549/audex",
+};
+ 
+const TEAM = [
+  { name: "Tarun Jaswal", github: "https://github.com/tjasw549" },
+  { name: "Mitchel Chanthaseng", github: "https://github.com/mitchelc-droid" },
+];
+ 
+const TECHNOLOGIES = [
+    { name: "React v19", purpose: "UI framework" },
+    { name: "Vite", purpose: "Build tool" },
+    { name: "Tailwind CSS", purpose: "Styling" },
+    { name: "Supabase", purpose: "Auth & playlist persistence" },
+    { name: "React Router v7", purpose: "Client-side routing" },
+    { name: "Recharts v3", purpose: "Song Chart" },
+];
+
+const AboutView = ({ isOpen, onClose }) => {
+  const dialogRef = useRef(null);
+ 
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+ 
+    if (isOpen) {
+      dialog.showModal();
+    } else {
+      dialog.close();
+    }
+  }, [isOpen]);
+ 
+  const handleBackdropClick = (e) => {
+    const rect = dialogRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const clickedOutside =
+      e.clientX < rect.left  ||
+      e.clientX > rect.right ||
+      e.clientY < rect.top   ||
+      e.clientY > rect.bottom;
+    if (clickedOutside) onClose();
+  };
+ 
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    const handleCancel = (e) => { e.preventDefault(); onClose(); };
+    dialog.addEventListener("cancel", handleCancel);
+    return () => dialog.removeEventListener("cancel", handleCancel);
+  }, [onClose]);
+ 
+  return (
+    <dialog
+      ref={dialogRef}
+      onClick={handleBackdropClick}
+      className="w-full max-w-[670px] max-h-[95vh] p-0 m-auto bg-[#060810] text-[#ddeeff] border border-cyan-400/15 overflow-hidden backdrop:bg-black/60 backdrop:backdrop-blur-sm open:flex open:flex-col"
+    >
+      
+      {/* Top accent line */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent flex-shrink-0" />
+ 
+      {/* Header row */}
+      <div className="flex items-start justify-between px-7 pt-6 pb-4 border-b border-cyan-400/10 flex-shrink-0">
+        <div>
+          <div className="text-[12px] tracking-[0.2em] uppercase text-cyan-400/60 mb-2 flex items-center gap-2">
+            <span className="w-4 h-px bg-cyan-400/40" />
+            {PROJECT.course}
+          </div>
+          <h2 className="font-['Bebas_Neue'] text-[32px] leading-none tracking-[0.05em] text-[#ddeeff]">
+            About <span className="text-cyan-400">{PROJECT.name}</span>
+          </h2>
+        </div>
+ 
+        <button
+          onClick={onClose}
+          aria-label="Close about dialog"
+          className="w-8 h-8 flex items-center justify-center text-[#ddeeff]/30 hover:text-[#ddeeff] border border-transparent hover:border-white/10 transition-all duration-150 flex-shrink-0 mt-1 bg-transparent cursor-pointer text-lg leading-none"
+        >
+          x
+        </button>
+      </div>
+ 
+      <div className="overflow-y-auto flex-1 px-7 py-6 flex flex-col gap-7">
+ 
+        {/* Description */}
+        <div>
+          <SectionLabel>The Project</SectionLabel>
+          <p className="text-[#ddeeff]/55 text-[14px] leading-relaxed">
+            Audex is a single-page music discovery app built with React and Vite.
+            Browse 10,000+ songs, explore artists and genres, view audio analytics,
+            and build playlists that persist across sessions.
+          </p>
+        </div>
+ 
+        {/* Team */}
+        <div>
+          <SectionLabel>Team</SectionLabel>
+          <div className="flex flex-col gap-2">
+            {TEAM.map((member) => (
+              <a
+                key={member.name}
+                href={member.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between px-4 py-3 border border-white/8 bg-[#090e1a]/60 hover:border-cyan-400/20 transition-colors duration-150 no-underline group"
+              >
+                <span className="text-[#ddeeff] text-[14px] group-hover:text-cyan-400 transition-colors duration-150">
+                  {member.name}
+                </span>
+                <span className="flex items-center gap-1.5 text-[12px] font-mono uppercase tracking-widest text-[#ddeeff]/25 group-hover:text-cyan-400/60 transition-colors duration-150">
+                  <GitHubIcon />
+                  GitHub
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+ 
+        {/* Technologies */}
+        <div>
+          <SectionLabel>Built With</SectionLabel>
+          <div className="flex flex-col divide-y divide-white/[0.05]">
+            {TECHNOLOGIES.map((tech) => (
+              <div key={tech.name} className="flex items-center justify-between py-2.5">
+                <div className="flex items-center gap-2.5">
+                  <span className="w-1 h-1 rounded-full bg-cyan-400/50" />
+                  <span className="text-[#ddeeff] text-[14px]">{tech.name}</span>
+                </div>
+                <span className="text-[12px] font-mono uppercase tracking-widest text-[#ddeeff]/25">
+                  {tech.purpose}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+ 
+        {/* GitHub link */}
+        <div>
+          <SectionLabel>Source Code</SectionLabel>
+          <a
+            href={PROJECT.githubRepo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 border border-cyan-400/20 text-[12px] font-mono uppercase tracking-widest text-cyan-400/70 hover:text-cyan-400 hover:border-cyan-400/50 transition-colors duration-150 no-underline"
+          >
+            <GitHubIcon />
+            {PROJECT.githubRepo.replace("https://github.com/tjasw549/audex", "View on Github")}
+          </a>
+        </div>
+ 
+      </div>
+ 
+      {/* Footer - Close button */}
+      <div className="flex justify-end px-7 py-4 border-t border-cyan-400/10 flex-shrink-0 bg-[#060810]">
+        <button
+          onClick={onClose}
+          className="px-8 py-2.5 font-mono text-[12px] tracking-[0.1em] uppercase bg-cyan-400 text-[#060810] font-medium hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#1a4a6a] transition-all duration-200 cursor-pointer border-0"
+        >
+          Close
+        </button>
+      </div>
+ 
+      {/* Bottom accent line */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent flex-shrink-0" />
+    </dialog>
+  );
+};
+ 
+const SectionLabel = ({ children }) => (
+  <div className="text-[12px] tracking-[0.2em] uppercase text-cyan-400/60 mb-3 flex items-center gap-2">
+    <span className="w-4 h-px bg-cyan-400/40" />
+    {children}
+  </div>
+);
+
+{/* Icon from: https://simpleicons.org/?q=github */}
+const GitHubIcon = () => (
+    <svg role="img" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="opacity-50 hover:opacity-100 transition-opacity duration-150" xmlns="http://www.w3.org/2000/svg">
+        <title>Github</title>
+        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    </svg>
+);
+
+export default AboutView;

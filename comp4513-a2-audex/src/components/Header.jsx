@@ -18,7 +18,10 @@ const Header = (props) => {
           menuOpen={menuOpen}
           onMenuToggle={() => setMenuOpen(prev => !prev)}
         >
-          <NavLinks isLoggedIn={props.isLoggedIn} />
+          <NavLinks 
+            isLoggedIn={props.isLoggedIn}
+            onAbout={props.onAbout}
+          />
         </HeaderRight>
       </header>
 
