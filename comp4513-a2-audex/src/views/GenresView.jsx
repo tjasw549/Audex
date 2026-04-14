@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// Removed useNavigate here since it's not being used in the parent
 import GenresHero from "../components/GenresHero.jsx";
 import GenresGrid from "../components/GenresGrid.jsx";
 

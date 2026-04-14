@@ -4,12 +4,10 @@ import AddToPlaylistModal from "./AddToPlaylistModal";
 
 const SongTable = ({ songs }) => {
   const navigate = useNavigate();
-  // State to track which song the user wants to add
   const [songToAdd, setSongToAdd] = useState(null);
 
   return (
     <div className="w-full pb-8">
-      {/* 1. Render the modal if a song is selected */}
       {songToAdd && (
         <AddToPlaylistModal 
           song={songToAdd} 

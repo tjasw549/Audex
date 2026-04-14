@@ -14,13 +14,11 @@ const SingleSongView = () => {
   const { song_id } = useParams();
   const [relatedSongs, setRelatedSongs] = useState([]);
 
-  // 1. ADD THIS LINE RIGHT HERE!
   const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // 2. ADD THIS LINE so clicking a new song triggers the loading screen
     setLoading(true);
 
     fetch(`https://comp4513-spotify-api.vercel.app/api/songs/${song_id}`)
@@ -131,12 +129,12 @@ const SingleSongView = () => {
             ))}
           </div>
 
-          <button
+          {/* <button
             onClick={() => console.log("Add to playlist:", song)}
             className="w-full py-3 border border-[#00e5ff]/40 text-[#00e5ff] text-xs tracking-[3px] uppercase hover:bg-[#00e5ff]/10 hover:border-[#00e5ff] transition-all"
           >
             + Add to Playlist
-          </button>
+          </button> */}
         </div>
         {/* RIGHT - Radar Chart */}
         <div className="flex-1">

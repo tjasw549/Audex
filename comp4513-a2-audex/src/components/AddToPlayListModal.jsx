@@ -8,7 +8,9 @@ const AddToPlaylistModal = ({ song, onClose }) => {
 
   useEffect(() => {
     const fetchPlaylists = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
       if (!user) {
         setMessage("Please log in to add to playlists.");
         setLoading(false);
@@ -32,17 +34,16 @@ const AddToPlaylistModal = ({ song, onClose }) => {
 
   const addToPlaylist = async (playlistId) => {
     setMessage("Adding...");
-    
+
     // Insert into Supabase
-    const { error } = await supabase
-      .from("user_playlist_songs")
-      .insert({
-        playlist_id: playlistId,
-        song_id: song.song_id,
-      });
+    const { error } = await supabase.from("user_playlist_songs").insert({
+      playlist_id: playlistId,
+      song_id: song.song_id,
+    });
 
     if (error) {
-      if (error.code === '23505') { // Postgres unique violation code
+      if (error.code === "23505") {
+        // Postgres unique violation code
         setMessage("Song is already in this playlist!");
       } else {
         setMessage("Error adding song.");
@@ -77,7 +78,9 @@ const AddToPlaylistModal = ({ song, onClose }) => {
         )}
 
         {loading ? (
-          <p className="text-white/40 text-xs text-center font-mono uppercase">Loading playlists...</p>
+          <p className="text-white/40 text-xs text-center font-mono uppercase">
+            Loading playlists...
+          </p>
         ) : playlists.length === 0 ? (
           <p className="text-white/40 text-xs text-center font-mono">
             No playlists found. Create one in the Playlists tab first!
