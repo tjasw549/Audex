@@ -75,7 +75,7 @@ const App = () => {
         <Route path="*" element={<HomeView />} />
       </Routes>
 
-      <Footer onAbout={() => setAboutOpen(true)} />
+      <Footer onAbout={() => setAboutOpen(true)} githubUrl={PROJECT.githubRepo} />
     </main>
   );
 };

@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-import FooterTop from "./FooterTop";
-import FooterBottom from "./FooterBottom";
+import FooterTop from "./FooterTop.jsx";
+import FooterBottom from "./FooterBottom.jsx";
 
 const FOOTER_LINKS = [
   { label: "Home", path: "/" },
@@ -10,7 +9,7 @@ const FOOTER_LINKS = [
   { label: "About", path: "/about" },
 ];
 
-const Footer = ({ githubUrl = "https://github.com/tjasw549/Audex", onAbout }) => {
+const Footer = ({ githubUrl, onAbout }) => {
   const year = new Date().getFullYear();
 
   return (

@@ -1,4 +1,4 @@
-import SectionLabel from "../components/SectionLabel";
+import SectionLabel from "../components/SectionLabel.jsx";
 
 const AboutSection = ({ title, children }) => {
     return(
