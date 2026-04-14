@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import SingleArtistRadarChart from "../components/SingleArtistRadarChart";
-import SongTable from "../components/SongTable"; 
+import SongTable from "../components/SongTable";
 
 const SingleArtist = () => {
   const [artist, setArtist] = useState(null);
@@ -20,11 +20,15 @@ const SingleArtist = () => {
         setLoading(false);
       });
 
-    fetch(`https://comp4513-spotify-api.vercel.app/api/artists/averages/${artist_id}`)
+    fetch(
+      `https://comp4513-spotify-api.vercel.app/api/artists/averages/${artist_id}`,
+    )
       .then((res) => res.json())
       .then((data) => setAverages(data));
 
-    fetch(`https://comp4513-spotify-api.vercel.app/api/songs/artist/${artist_id}`)
+    fetch(
+      `https://comp4513-spotify-api.vercel.app/api/songs/artist/${artist_id}`,
+    )
       .then((res) => res.json())
       .then((data) => setSongs(data));
   }, [artist_id]);
@@ -94,8 +98,9 @@ const SingleArtist = () => {
             <SingleArtistRadarChart averages={averages} />
 
             {/* RIGHT - Your specific generic SongTable */}
-            <div className="flex-1 overflow-hidden">
-               <SongTable songs={songs} />
+            <div className="flex-1 overflow-x-auto w-full min-w-0">
+              {" "}
+              <SongTable songs={songs} />
             </div>
           </div>
         </div>
