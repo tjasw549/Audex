@@ -3,8 +3,19 @@ import Ticker from "../components/Ticker.jsx";
 import FeaturedArtists from "../components/FeaturedArtists.jsx";
 import CTA from "../components/CTA.jsx";
 import Genres from "../components/Genres.jsx";
+import { useState, useEffect } from "react";
 
 const HomeView = () => {
+  const [genres, setGenres] = useState([]);
+
+  useEffect(() => {
+    fetch("https://comp4513-spotify-api.vercel.app/api/genres")
+      .then((res) => res.json())
+      .then((data) => {
+        setGenres(data);
+      });
+  }, []);
+
   const artists = [
     {
       size: "large",
@@ -12,26 +23,24 @@ const HomeView = () => {
         "https://images6.alphacoders.com/108/thumb-1920-1080803.jpg",
       genre: "R&B",
       artist_name: "The Weeknd",
+      artist_id: 154,
     },
     {
       artist_image_url:
-        "https://i.scdn.co/image/ab6761610000f178d8b9980db67272cb4d2c3daf",
+        "https://picfiles.alphacoders.com/343/thumb-1920-343737.jpg",
       genre: "Alt Pop",
       artist_name: "Billie Eilish",
+      artist_id: 18,
     },
     {
       artist_image_url:
         "https://i.scdn.co/image/3a836196bfb341f736c7fe2704fb75de53f8dfbb",
       genre: "Hip-Hop",
       artist_name: "Kendrick Lamar",
+      artist_id: 70,
     },
   ];
 
-  const genres = [
-    "Alt Z", "Alt Pop", "ATL Hip Hop", "Boy Band", "Brostep", "Canadian Hip Hop", "Chicago Rap", "Dance Pop", 
-    "DFW Rap", "Emo Rap", "Folk-Pop", "Hip-Hop", "Indie Pop", "Latin", "Melodic Rap", "Pop", "Country", "R&B",
-    "K-Pop", "Modern Rock"
-  ];
   const tickerItems = ["10,000+ Songs", "Browse by Artist", "Create Playlists"];
 
   return (
