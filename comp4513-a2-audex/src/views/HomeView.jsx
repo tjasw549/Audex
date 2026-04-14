@@ -9,6 +9,8 @@ const HomeView = () => {
   const [genres, setGenres] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     fetch("https://comp4513-spotify-api.vercel.app/api/genres")
       .then((res) => res.json())
       .then((data) => {
