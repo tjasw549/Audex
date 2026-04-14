@@ -159,7 +159,7 @@ const App = () => {
       />
 
       <Routes>
-        <Route path="/"   element={<HomeView />} />
+        <Route path="/" element={<HomeView />} />
         <Route path="/artists" element={<ArtistsView />} />
         <Route path="/single-artist/:artist_id" element={<SingleArtistView addToPlaylist={addToPlaylist} />} />
         <Route path="/single-song/:song_id" element={<SingleSongView addToPlaylist={addToPlaylist} />} />
