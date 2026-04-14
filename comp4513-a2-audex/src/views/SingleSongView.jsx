@@ -14,8 +14,14 @@ const SingleSongView = () => {
   const { song_id } = useParams();
   const [relatedSongs, setRelatedSongs] = useState([]);
 
+  // 1. ADD THIS LINE RIGHT HERE!
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // 2. ADD THIS LINE so clicking a new song triggers the loading screen
+    setLoading(true);
 
     fetch(`https://comp4513-spotify-api.vercel.app/api/songs/${song_id}`)
       .then((res) => res.json())
@@ -23,8 +29,7 @@ const SingleSongView = () => {
         setSong(data);
         setLoading(false);
 
-        // fetch related songs INSIDE the first fetch callback
-        // so we have access to the song data without a dependency
+        // fetch related songs
         fetch(`https://comp4513-spotify-api.vercel.app/api/songs`)
           .then((res) => res.json())
           .then((allSongs) => {
@@ -50,6 +55,8 @@ const SingleSongView = () => {
       </div>
     );
   }
+
+  /* ... the rest of your component stays exactly the same! ... */
 
   const radarData = [
     { metric: "Danceability", value: song.danceability },
@@ -177,7 +184,8 @@ const SingleSongView = () => {
             <div className="flex-1 h-px bg-[#00e5ff]/15" />
           </div>
 
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">            {relatedSongs.map((s) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {relatedSongs.map((s) => (
               <div
                 key={s.song_id}
                 onClick={() => navigate(`/single-song/${s.song_id}`)}
