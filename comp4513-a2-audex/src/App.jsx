@@ -15,6 +15,27 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 const App = () => {
+  const PROJECT = {
+    name:       "Audex",
+    course:     "COMP 4513 - Assignment 2",
+    semester:   "Winter 2026",
+    githubRepo: "https://github.com/tjasw549/audex",
+  };
+ 
+  const TEAM = [
+    { name: "Tarun Jaswal", github: "https://github.com/tjasw549" },
+    { name: "Mitchel Chanthaseng", github: "https://github.com/mitchelc-droid" },
+  ];
+ 
+  const TECHNOLOGIES = [
+    { name: "React v19", purpose: "UI framework" },
+    { name: "Vite", purpose: "Build tool" },
+    { name: "Tailwind CSS", purpose: "Styling" },
+    { name: "Supabase", purpose: "Auth & playlist persistence" },
+    { name: "React Router v7", purpose: "Client-side routing" },
+    { name: "Recharts v3", purpose: "Song Chart" },
+  ];
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [playlistName, setPlaylistName] = useState("Playlist");
   const [playlistCount, setPlaylistCount] = useState(124);
@@ -30,7 +51,13 @@ const App = () => {
         onAbout={() => setAboutOpen(true)}
       />
 
-      <AboutView isOpen={aboutOpen} onClose={() => setAboutOpen(false)} />
+      <AboutView
+        isOpen={aboutOpen}
+        onClose={() => setAboutOpen(false)}
+        project={PROJECT}
+        team={TEAM}
+        technologies={TECHNOLOGIES}
+      />
 
       <Routes>
         <Route path="/" element={<HomeView />} />
