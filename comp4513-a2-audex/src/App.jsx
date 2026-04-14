@@ -166,6 +166,8 @@ const App = () => {
         <Route path="/genres" element={<GenresView />} />
         <Route path="/single-genre/:genre_id" element={<SingleGenreView addToPlaylist={addToPlaylist} />} />
         <Route path="/songs" element={<SongsView addToPlaylist={addToPlaylist} />} />
+        <Route path="/songs/:artist_id" element={<SongsView />} />
+
         <Route path="/songs/genre/:genre_id" element={<SongsView addToPlaylist={addToPlaylist} />} />
         <Route path="/playlists"
           element={
