@@ -18,14 +18,21 @@ const Header = (props) => {
           menuOpen={menuOpen}
           onMenuToggle={() => setMenuOpen(prev => !prev)}
         >
-          <NavLinks isLoggedIn={props.isLoggedIn} />
+          <NavLinks 
+            isLoggedIn={props.isLoggedIn}
+            onAbout={props.onAbout}
+          />
         </HeaderRight>
       </header>
 
       {/* Mobile dropdown */}
       {menuOpen && (
         <div className="fixed top-[68px] left-0 right-0 z-40 bg-[#0a0f1a]/95 border-b border-[#00c8ff]/10 md:hidden">
-          <NavLinks isLoggedIn={props.isLoggedIn} mobile onLinkClick={() => setMenuOpen(false)} />
+          <NavLinks 
+            isLoggedIn={props.isLoggedIn} 
+            mobile onLinkClick={() => setMenuOpen(false)} 
+            onAbout={props.onAbout}
+          />
         </div>
       )}
 

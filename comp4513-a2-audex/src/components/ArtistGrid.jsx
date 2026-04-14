@@ -1,4 +1,4 @@
-import ArtistCard from "./ArtistCard";
+import ArtistCard from "./ArtistCard.jsx";
 
 const ArtistGrid = (props) => {
   return (

@@ -1,5 +1,5 @@
-import SectionHeader from "../components/SectionHeader";
-import ArtistCard from "../components/ArtistCard";
+import SectionHeader from "../components/SectionHeader.jsx";
+import ArtistCard from "../components/ArtistCard.jsx";
 
 const FeaturedArtists = (props) => {
   return (

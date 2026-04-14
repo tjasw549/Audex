@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-import FooterTop from "./FooterTop";
-import FooterBottom from "./FooterBottom";
+import FooterTop from "./FooterTop.jsx";
+import FooterBottom from "./FooterBottom.jsx";
 
 const FOOTER_LINKS = [
   { label: "Home", path: "/" },
@@ -10,14 +9,14 @@ const FOOTER_LINKS = [
   { label: "About", path: "/about" },
 ];
 
-const Footer = ({ githubUrl = "https://github.com/tjasw549/Audex" }) => {
+const Footer = ({ githubUrl, onAbout }) => {
   const year = new Date().getFullYear();
 
   return (
     <div>
       <footer className="border-t border-[#00c8ff]/10 bg-[#0a0f1a] px-6 sm:px-10 lg:px-12 pt-10 sm:pt-12 pb-8 ">
         <div className="max-w-[1200px] mx-auto">  
-          <FooterTop />
+          <FooterTop onAbout={onAbout} />
           <FooterBottom githubUrl={githubUrl} />
         </div>
       </footer>
