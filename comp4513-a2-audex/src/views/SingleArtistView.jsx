@@ -58,7 +58,7 @@ const SingleArtistView = () => {
   }
 
   return (
-    <div className="bg-[#060810] text-[#ddeeff] w-full min-h-screen ">
+    <div className="bg-[#060810] overflow-x-hidden text-[#ddeeff] w-full min-h-screen ">
       {/* HERO */}
       <div className="relative h-[480px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628] via-[#060810] to-[#0d1f1f]" />
@@ -66,7 +66,7 @@ const SingleArtistView = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom-left,rgba(0,100,120,0.1),transparent_60%)]" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-[#00e5ff]/20" />
 
-        <div className="absolute bottom-0 left-0 right-0 p-12 flex items-end gap-10">
+        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 flex flex-col md:flex-row items-center md:items-end gap-6 md:gap-10 text-center md:text-left">
           <img
             src={artist?.artist_image_url}
             className="w-44 h-44 object-cover border-2 border-[#00e5ff] shadow-[0_0_40px_rgba(0,229,255,0.2)] flex-shrink-0"
@@ -106,7 +106,7 @@ const SingleArtistView = () => {
             <div className="flex-1 h-px bg-[#00e5ff]/15" />
           </div>
 
-          <div className="flex gap-12">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             {/* LEFT - Radar Chart */}
             <div className="w-[500px] h-[400px] flex-shrink-0">
               <ResponsiveContainer width="100%" height="100%">

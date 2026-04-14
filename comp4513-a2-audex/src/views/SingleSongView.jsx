@@ -61,7 +61,7 @@ const SingleSongView = () => {
   ];
 
   return (
-    <div className="bg-[#060810] text-[#ddeeff] min-h-screen ">
+    <div className="bg-[#060810] text-[#ddeeff] min-h-screen overflow-x-hidden">
       {/* HERO */}
       <div className="relative h-[300px]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628] via-[#060810] to-[#0d1f1f]" />
@@ -91,17 +91,18 @@ const SingleSongView = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="max-w-6xl mx-auto px-12 py-12 flex gap-16">
+      <div className="max-w-6xl mx-auto px-5 md:px-12 py-8 md:py-12 flex flex-col lg:flex-row gap-10 lg:gap-16">
+        {" "}
         {/* LEFT - Stats + Button */}
-        <div className="w-64 flex-shrink-0">
+        <div className="w-64 flex-shrink-0 w-full lg:w-64 flex-shrink-0">
           <div className="flex items-center gap-4 mb-6">
             <span className="text-[10px] tracking-[5px] text-[#00e5ff] uppercase">
               Details
             </span>
-            <div className="flex-1 h-px bg-[#00e5ff]/15" />
+            <div className="flex-1 h-px bg-[#00e5ff]/15 " />
           </div>
 
-          <div className="space-y-4 mb-10">
+          <div className="space-y-4 mb-10 ">
             {[
               { label: "BPM", value: song.bpm },
               { label: "Popularity", value: song.popularity },
@@ -113,7 +114,7 @@ const SingleSongView = () => {
             ].map(({ label, value }) => (
               <div
                 key={label}
-                className="flex justify-between border-b border-white/5 pb-3"
+                className=" flex justify-between border-b border-white/5 pb-3"
               >
                 <span className="text-xs text-[#ddeeff]/30 tracking-widest uppercase">
                   {label}
@@ -130,7 +131,6 @@ const SingleSongView = () => {
             + Add to Playlist
           </button>
         </div>
-
         {/* RIGHT - Radar Chart */}
         <div className="flex-1">
           <div className="flex items-center gap-4 mb-6">
@@ -177,8 +177,7 @@ const SingleSongView = () => {
             <div className="flex-1 h-px bg-[#00e5ff]/15" />
           </div>
 
-          <div className="grid grid-cols-4 gap-4">
-            {relatedSongs.map((s) => (
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">            {relatedSongs.map((s) => (
               <div
                 key={s.song_id}
                 onClick={() => navigate(`/single-song/${s.song_id}`)}
