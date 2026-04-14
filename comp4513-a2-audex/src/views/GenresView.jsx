@@ -24,7 +24,7 @@ const GenresView = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-[#060810]">
+      <div className="flex items-center justify-center overflow-x-hidden h-screen bg-[#060810]">
         <span className="font-['Bebas_Neue'] text-4xl tracking-[8px] text-[#00e5ff]/40 animate-pulse">
           LOADING...
         </span>
@@ -33,14 +33,15 @@ const GenresView = () => {
   }
 
   return (
-    <div className="bg-[#060810] text-[#ddeeff] min-h-screen ">
+    <div className="bg-[#060810] overflow-x-hidden text-[#ddeeff] min-h-screen ">
       {/* HERO */}
       <div className="relative h-[240px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628] via-[#060810] to-[#0d1f1f]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top-right,rgba(0,229,255,0.08),transparent_60%)]" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-[#00e5ff]/20" />
 
-        <div className="absolute bottom-0 left-0 right-0 p-12 flex items-end justify-between">
+        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
+          {" "}
           <div>
             <p className="text-[11px] tracking-[4px] text-[#00e5ff] uppercase mb-2">
               Browse
@@ -70,7 +71,7 @@ const GenresView = () => {
           <div className="flex-1 h-px bg-[#00e5ff]/15" />
         </div>
 
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {filtered.map((genre, i) => (
             <div
               key={genre.genre_id}
