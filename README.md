@@ -12,7 +12,7 @@ Designed with a focus on modern UI/UX principles, Audex features interactive aud
 
 ## Hosting
 
-> 🔗 **Live Web App:** https://comp4513-a2-audex.vercel.app/
+> **Live Web App:** https://comp4513-a2-audex.vercel.app/
 
 ### Core Views & Functionality
 
