@@ -10,7 +10,7 @@ const HomeView = () => {
       size: "large",
       artist_image_url:
         "https://images6.alphacoders.com/108/thumb-1920-1080803.jpg",
-      genre: "r&b",
+      genre: "R&B",
       artist_name: "The Weeknd",
     },
     {
@@ -27,11 +27,15 @@ const HomeView = () => {
     },
   ];
 
-  const genres = ["Alt Pop", "R&B", "Pop", "Hip-Hop", "Indie"];
+  const genres = [
+    "Alt Z", "Alt Pop", "ATL Hip Hop", "Boy Band", "Brostep", "Canadian Hip Hop", "Chicago Rap", "Dance Pop", 
+    "DFW Rap", "Emo Rap", "Folk-Pop", "Hip-Hop", "Indie Pop", "Latin", "Melodic Rap", "Pop", "Country", "R&B",
+    "K-Pop", "Modern Rock"
+  ];
   const tickerItems = ["10,000+ Songs", "Browse by Artist", "Create Playlists"];
 
   return (
-    <div className="bg-[#060810] text-[#ddeeff] min-h-screen overflow-hidden font-['mono']">
+    <div className="bg-[#060810] text-[#ddeeff] min-h-screen overflow-hidden ">
       <HomeHero />
       <Ticker items={tickerItems} />
       <FeaturedArtists artists={artists} />

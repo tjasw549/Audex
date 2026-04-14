@@ -106,7 +106,7 @@ const LoginView = ({ onLogin }) => {
                 key={t}
                 onClick={() => switchTab(t)}
                 className={`
-                  flex-1 py-4 font-['mono'] text-[11px] tracking-[0.15em] uppercase
+                  flex-1 py-4  text-[11px] tracking-[0.15em] uppercase
                   transition-colors duration-150 relative
                   ${tab === t
                     ? "text-cyan-400 bg-cyan-400/[0.04]"
@@ -157,13 +157,13 @@ const LoginView = ({ onLogin }) => {
                 )}
 
                 {error && (
-                  <div className="px-4 py-3 font-['mono'] text-[11px] tracking-[0.06em] text-red-400 border border-red-400/20 bg-red-400/5">
+                  <div className="px-4 py-3  text-[11px] tracking-[0.06em] text-red-400 border border-red-400/20 bg-red-400/5">
                     {error}
                   </div>
                 )}
 
                 {success && (
-                  <div className="px-4 py-3 font-['mono'] text-[11px] tracking-[0.06em] text-cyan-400 leading-relaxed border border-cyan-400/20 bg-cyan-400/5">
+                  <div className="px-4 py-3  text-[11px] tracking-[0.06em] text-cyan-400 leading-relaxed border border-cyan-400/20 bg-cyan-400/5">
                     {success}
                   </div>
                 )}
@@ -171,17 +171,17 @@ const LoginView = ({ onLogin }) => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full mt-1 py-4 font-['mono'] text-[13px] tracking-[0.1em] uppercase font-medium transition-all duration-200 bg-cyan-400 text-[#060810] disabled:opacity-40 disabled:cursor-not-allowed hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#1a4a6a]"
+                  className="w-full mt-1 py-4  text-[13px] tracking-[0.1em] uppercase font-medium transition-all duration-200 bg-cyan-400 text-[#060810] disabled:opacity-40 disabled:cursor-not-allowed hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#1a4a6a]"
                 >
                   {loading ? "Please wait..." : tab === "login" ? "Login" : "Create Account"}
                 </button>
 
-                <p className="text-center font-['mono'] text-[11px] tracking-[0.06em] text-[#ddeeff]/25">
+                <p className="text-center  text-[11px] tracking-[0.06em] text-[#ddeeff]/25">
                   {tab === "login" ? "No account? " : "Already have one? "}
                   <button
                     type="button"
                     onClick={() => switchTab(tab === "login" ? "register" : "login")}
-                    className="text-cyan-400/70 hover:text-cyan-400 transition-colors duration-150 bg-transparent border-0 cursor-pointer font-['mono'] text-[11px] tracking-[0.06em]"
+                    className="text-cyan-400/70 hover:text-cyan-400 transition-colors duration-150 bg-transparent border-0 cursor-pointer  text-[11px] tracking-[0.06em]"
                   >
                     {tab === "login" ? "Register" : "Login"}
                   </button>
@@ -198,7 +198,7 @@ const LoginView = ({ onLogin }) => {
         <div className="text-center mt-6">
           <button
             onClick={() => navigate("/")}
-            className="font-['mono'] text-[11px] tracking-[0.1em] uppercase text-[#ddeeff]/20 hover:text-[#ddeeff]/50 transition-colors duration-150 bg-transparent border-0 cursor-pointer"
+            className=" text-[11px] tracking-[0.1em] uppercase text-[#ddeeff]/20 hover:text-[#ddeeff]/50 transition-colors duration-150 bg-transparent border-0 cursor-pointer"
           >
             ← Back to Home
           </button>
@@ -211,7 +211,7 @@ const LoginView = ({ onLogin }) => {
 
 const Field = ({ label, type, value, onChange, placeholder, required }) => (
   <div className="flex flex-col gap-2">
-    <label className="font-['mono'] text-[11px] tracking-[0.12em] uppercase text-[#ddeeff]/45">
+    <label className=" text-[11px] tracking-[0.12em] uppercase text-[#ddeeff]/45">
       {label}
     </label>
     <input
@@ -220,7 +220,7 @@ const Field = ({ label, type, value, onChange, placeholder, required }) => (
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
       required={required}
-      className="w-full px-4 py-3 bg-[#090e1a] font-['mono'] text-[13px] text-[#ddeeff] placeholder:text-[#ddeeff]/20 outline-none transition-all duration-150 border border-white/10 focus:border-cyan-400/40 focus:ring-2 focus:ring-cyan-400/10"
+      className="w-full px-4 py-3 bg-[#090e1a]  text-[13px] text-[#ddeeff] placeholder:text-[#ddeeff]/20 outline-none transition-all duration-150 border border-white/10 focus:border-cyan-400/40 focus:ring-2 focus:ring-cyan-400/10"
     />
   </div>
 );

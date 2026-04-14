@@ -31,7 +31,7 @@ const GenresView = () => {
     }
 
     return (
-        <div className="bg-[#060810] text-[#ddeeff] min-h-screen font-['mono']">
+        <div className="bg-[#060810] text-[#ddeeff] min-h-screen ">
 
             {/* HERO */}
             <div className="relative h-[240px] overflow-hidden">
@@ -69,7 +69,7 @@ const GenresView = () => {
                     {filtered.map((genre, i) => (
                         <div
                             key={genre.genre_id}
-                            onClick={() => navigate(`/single-genre/${genre.genre_id}`)}
+                            onClick={() => navigate(`/songs/genre/${genre.genre_id}`)}
                             className="relative border border-white/5 p-6 hover:border-[#00e5ff]/40 hover:bg-[#00e5ff]/[0.03] transition-all cursor-pointer group overflow-hidden"
                         >
                             {/* background number */}

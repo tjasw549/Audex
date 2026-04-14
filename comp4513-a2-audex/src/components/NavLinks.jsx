@@ -21,7 +21,7 @@ const NavLinks = ({ isLoggedIn, mobile = false, onLinkClick }) => {
               to={link.to}
               onClick={onLinkClick}
               className={({ isActive }) =>
-                `block text-[11px] font-['mono'] uppercase tracking-widest px-6 py-3 transition ${
+                `block text-[11px]  uppercase tracking-widest px-6 py-3 transition ${
                   isActive ? 'text-[#00c8ff]' : 'text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5'
                 }`
               }
@@ -41,7 +41,7 @@ const NavLinks = ({ isLoggedIn, mobile = false, onLinkClick }) => {
           <NavLink
             to={link.to}
             className={({ isActive }) =>
-              `text-[11px] font-['mono'] uppercase tracking-widest px-4 py-2 rounded transition ${
+              `text-[11px]  uppercase tracking-widest px-4 py-2 rounded transition ${
                 isActive
                   ? 'text-[#00c8ff] border-b border-[#00c8ff]'
                   : 'text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5'
