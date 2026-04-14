@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { label: "Genres", to: "/genres" },
   { label: "Songs", to: "/songs" },
   { label: "Playlists", to: "/playlists", requiresAuth: true },
+  { label: "About", to: "/about", isModal: true },
 ];
 
 const NavLinks = ({ isLoggedIn, mobile = false, onLinkClick, onAbout }) => {
@@ -18,25 +19,21 @@ const NavLinks = ({ isLoggedIn, mobile = false, onLinkClick, onAbout }) => {
           <li key={link.to}>
             <NavLink
               to={link.to}
-              onClick={onLinkClick}
-              className={({ isActive }) =>
-                `block text-[11px] uppercase tracking-widest px-6 py-3 transition ${
-                  isActive ? 'text-[#00c8ff]' : 'text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5'
-                }`
-              }
+              onClick={(e) => {
+                if (link.isModal) {
+                  e.preventDefault();
+                  onLinkClick?.();
+                  onAbout?.();     
+                  return;
+                }
+                onLinkClick?.();
+              }}
+              className={({ isActive }) => `block text-[11px] uppercase tracking-widest px-6 py-3 transition ${link.isModal ? 'text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5' : isActive ? 'text-[#00c8ff]' : 'text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5'}`}
             >
               {link.label}
             </NavLink>
           </li>
         ))}
-        <li>
-          <button
-            onClick={() => { onAbout?.(); onLinkClick?.(); }}
-            className="block w-full text-left text-[11px] uppercase tracking-widest px-6 py-3 transition text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5 bg-transparent border-0 cursor-pointer"
-          >
-            About
-          </button>
-        </li>
       </ul>
     );
   }
@@ -47,26 +44,18 @@ const NavLinks = ({ isLoggedIn, mobile = false, onLinkClick, onAbout }) => {
         <li key={link.to}>
           <NavLink
             to={link.to}
-            className={({ isActive }) =>
-              `text-[11px] uppercase tracking-widest px-4 py-2 rounded transition ${
-                isActive
-                  ? 'text-[#00c8ff] border-b border-[#00c8ff]'
-                  : 'text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5'
-              }`
-            }
+            onClick={(e) => {
+              if (link.isModal) {
+                e.preventDefault();
+                onAbout?.();          
+              }
+            }}
+            className={({ isActive }) => `text-[11px] uppercase tracking-widest px-4 py-2 rounded transition ${isActive ? 'text-[#00c8ff] border-b border-[#00c8ff]' : 'text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5'}`}
           >
             {link.label}
           </NavLink>
         </li>
       ))}
-      <li>
-        <button
-          className="text-[11px] uppercase tracking-widest px-4 py-2 rounded transition text-[#ddeeff]/50 hover:text-[#ddeeff] hover:bg-[#ddeeff]/5 bg-transparent border-0 cursor-pointer"
-          onClick={onAbout}
-        >
-          About
-        </button>
-      </li>
     </ul>
   );
 };
