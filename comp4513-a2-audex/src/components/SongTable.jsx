@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 
-const SongTable = ({ songs }) => {
+const SongTable = ({ songs, addToPlaylist }) => {
   const navigate = useNavigate();
 
   return (
@@ -36,6 +36,7 @@ const SongTable = ({ songs }) => {
             <th className="border-b border-white/5 w-12 md:w-16"></th>
           </tr>
         </thead>
+
         <tbody>
           {songs.map((song, i) => (
             <tr
@@ -58,7 +59,7 @@ const SongTable = ({ songs }) => {
               >
                 <Link
                   to={`/single-artist/${song.artists?.artist_id}`}
-                  className="text-[#ddeeff]/50 hover:text-[#00e5ff] transition-colors"
+                  className="text-[#ddeeff]/50 hover:text-[#00c8ff] transition-colors"
                 >
                   {song.artists?.artist_name}
                 </Link>
@@ -71,7 +72,7 @@ const SongTable = ({ songs }) => {
               >
                 <Link
                   to={`/single-genre/${song.genres?.genre_id}`}
-                  className="text-[#ddeeff]/30 hover:text-[#00e5ff] transition-colors capitalize"
+                  className="text-[#ddeeff]/30 hover:text-[#00c8ff] transition-colors capitalize"
                 >
                   {song.genres?.genre_name}
                 </Link>
@@ -87,7 +88,7 @@ const SongTable = ({ songs }) => {
                   onClick={() => console.log("Add to playlist:", song)}
                   className="w-7 h-7 border border-[#00e5ff]/25 text-[#00e5ff] text-base hover:bg-[#00e5ff]/10 hover:border-[#00e5ff] transition-all flex items-center justify-center mx-auto"
                 >
-                  +
+                  <span className="-translate-y-[2.5px]">+</span>
                 </button>
               </td>
             </tr>
