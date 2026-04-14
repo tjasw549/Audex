@@ -9,6 +9,7 @@ import SingleArtistView from "./views/SingleArtistView";
 import SingleSongView from "./views/SingleSongView";
 import SongsView from "./views/SongsView";
 import LoginView from "./views/LoginView";
+import PlaylistView from "./views/PlaylistView";
 import AboutView from "./views/AboutView";
 
 import Header from "./components/Header";
@@ -71,6 +72,8 @@ const App = () => {
         <Route path="/songs/:artist_id" element={<SongsView />} />
         <Route path="/songs/:genre_id" element={<SongsView />} />
         <Route path="/songs/genre/:genre_id" element={<SongsView />} />
+        <Route path="/playlists" element={<PlaylistView />} />
+
         {/* fallback */}
         <Route path="*" element={<HomeView />} />
       </Routes>
