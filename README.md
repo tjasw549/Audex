@@ -1,8 +1,8 @@
-# Audex – Music Discovery Platform
+# Audex - Music Discovery Platform
 
 ## Overview
 
-Audex is a sophisticated, single-page application (SPA) built with React that allows users to discover, filter, and explore a vast catalog of music. The application consumes data from a custom REST API (serving information from a Supabase cloud database) to populate dynamic, responsive interfaces.
+Audex is a sophisticated, single-page application (SPA) built with React that allows users to discover, filter, and explore a vast catalogue of music. The application consumes data from a custom REST API (serving information from a Supabase cloud database) to populate dynamic, responsive interfaces.
 
 Designed with a focus on modern UI/UX principles, Audex features interactive audio profiles, deep dives into artist statistics, and a robust filtering system that adapts seamlessly to both desktop and mobile devices.
 
@@ -17,18 +17,18 @@ Designed with a focus on modern UI/UX principles, Audex features interactive aud
 ### Core Views & Functionality
 
 #### 1. Home View (`/`)
-A visually engaging landing page that introduces the platform. It serves as the primary entry point, guiding users toward exploring artists, genres, the main song catalog.
+A visually engaging landing page that introduces the platform. It serves as the primary entry point, guiding users toward exploring artists, genres, and the main song catalogue.
 
 #### 2. Discovery Hub / Browse View (`/songs`)
-The core functionality of the application, designed for deep exploration of the song database.
-* **Multi-Faceted Filtering:** Users can filter the catalog using multiple criteria simultaneously, including Title (substring search), Year, Artist, and Genre.
+The core functionality of the application is designed for deep exploration of the song database.
+* **Multi-Faceted Filtering:** Users can filter the catalogue using multiple criteria simultaneously, including Title (substring search), Year, Artist, and Genre.
 * **Dynamic Sorting:** The results can be sorted by various fields (e.g., Title, Year, Artist name) to organize the data effectively.
-* **Reusable Song List Component:** The display of songs utilizes a highly modular component, that's used across views to ensuring consistent functionality and styling for all songs lists.
+* **Reusable Song List Component:** The display of songs utilizes a highly modular component that's used across views to ensure consistent functionality and styling for all song lists.
 
 #### 3. Artists & Genres Entry Views (`/artists` & `/genres`)
-Dedicated landing pages serving as directories for artists and musical genres.
+Dedicated landing pages serve as directories for artists and musical genres.
 * **Visual Grids:** Displays artists (utilizing dynamic image URLs sourced from the API) and stylized genre tiles.
-* **Direct Navigation:** Clicking on any artist or genre immediately directs the user to a filtered view of their respective catalog.
+* **Direct Navigation:** Clicking on any artist or genre immediately directs the user to a filtered view of their respective catalogue.
 
 #### 4. Single Artist / Genre Details (`/single-artist/:id` & `/songs/genre/:id`)
 Deep dives into specific categories or creators.
