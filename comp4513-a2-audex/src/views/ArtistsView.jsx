@@ -11,7 +11,7 @@ const ArtistsView = () => {
     window.scrollTo(0, 0);
 
 
-    fetch("https://comp4513-spotify-api.vercel.app/api/artists")
+    fetch("https://comp-4513-assignnment1.vercel.app/api/artists")
       .then((res) => res.json())
       .then((data) => {
         setArtists(data);

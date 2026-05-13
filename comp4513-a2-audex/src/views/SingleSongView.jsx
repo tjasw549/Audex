@@ -23,14 +23,15 @@ const SingleSongView = () => {
     // 2. ADD THIS LINE so clicking a new song triggers the loading screen
     setLoading(true);
 
-    fetch(`https://comp4513-spotify-api.vercel.app/api/songs/${song_id}`)
+    fetch(`https://comp-4513-assignnment1.vercel.app/api/songs/${song_id}`)
       .then((res) => res.json())
       .then((data) => {
-        setSong(data);
+        setSong(Array.isArray(data) ? data[0] : data);
+
         setLoading(false);
 
         // fetch related songs
-        fetch(`https://comp4513-spotify-api.vercel.app/api/songs`)
+        fetch(`https://comp-4513-assignnment1.vercel.app/api/songs`)
           .then((res) => res.json())
           .then((allSongs) => {
             const related = allSongs

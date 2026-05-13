@@ -13,21 +13,25 @@ const SingleArtist = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    fetch(`https://comp4513-spotify-api.vercel.app/api/artists/${artist_id}`)
+    fetch(`https://comp-4513-assignnment1.vercel.app/api/artists/${artist_id}`)
       .then((res) => res.json())
       .then((data) => {
-        setArtist(data);
+        setArtist(Array.isArray(data) ? data[0] : data);
+
         setLoading(false);
       });
 
     fetch(
-      `https://comp4513-spotify-api.vercel.app/api/artists/averages/${artist_id}`,
+      `https://comp-4513-assignnment1.vercel.app/api/artists/averages/${artist_id}`,
     )
       .then((res) => res.json())
-      .then((data) => setAverages(data));
+      .then((data) => {
+        const result = Array.isArray(data) ? data[0] : data;
+        setAverages(result.averages);
+      });
 
     fetch(
-      `https://comp4513-spotify-api.vercel.app/api/songs/artist/${artist_id}`,
+      `https://comp-4513-assignnment1.vercel.app/api/songs/artist/${artist_id}`,
     )
       .then((res) => res.json())
       .then((data) => setSongs(data));

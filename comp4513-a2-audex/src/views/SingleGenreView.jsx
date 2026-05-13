@@ -11,7 +11,7 @@ const SingleGenreView = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    fetch(`https://comp4513-spotify-api.vercel.app/api/songs/genre/${genre_id}`)
+    fetch(`https://comp-4513-assignnment1.vercel.app/api/songs/genre/${genre_id}`)
       .then((res) => res.json())
       .then((data) => {
         setSongs(data);

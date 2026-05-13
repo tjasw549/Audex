@@ -12,7 +12,7 @@ const PlaylistView = () => {
   // Load songs (API)
   // ---------------------------
   useEffect(() => {
-    fetch("https://comp4513-spotify-api.vercel.app/api/songs")
+    fetch("https://comp-4513-assignnment1.vercel.app/api/songs")
       .then((res) => res.json())
       .then((data) => {
         setSongs(data);
